@@ -50,6 +50,7 @@ export const CreditForm = () => {
       setError(true);
     } else {
       alert("Data entered successfully!");
+      window.location.reload();
       setError(false);
     }
   };

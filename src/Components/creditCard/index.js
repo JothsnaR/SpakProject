@@ -6,7 +6,6 @@ export const CreditCard = ({ cardState }) => {
 
   const getCard = () => {
     let cardType =  getCardType(cardState.cardNumber.replace(/\s/g, ''));
-    console.log('card', cardType)
     let image = "./images/discover.png";
     if (cardType) {
       switch(cardType) {
@@ -29,7 +28,7 @@ export const CreditCard = ({ cardState }) => {
   }
 
   let imageTag = getCard();
-  if (cardState.cvv && document.getElementsByClassName("cvvclass")[0]) {
+  if (cardState.cvv && document.getElementsByClassName("cvvclass")[0] ) {
     document.getElementsByClassName("cardContainerContent")[0].style.transform = "rotateY(180deg)";
     document.getElementsByClassName("cardContainerContent")[0].style.transition = "transform 0.6s";
     document.getElementsByClassName("cardContainerContent")[0].style.transformStyle = "preserve-3d";
@@ -44,11 +43,6 @@ export const CreditCard = ({ cardState }) => {
     maskCard = first4 + mask + last5;
   }
 
-  // if (cardState.cvvdocument && document.activeElement.name !== "cvv" && document.getElementsByClassName("cardContainerContent")[0] && !document.getElementsByClassName("cvvclass")[0]) {
-  //   document.getElementsByClassName("cardContainerContent")[0].style.transform = "rotateY(180deg)";
-  //   document.getElementsByClassName("cardContainerContent")[0].style.transition = "transform 0.6s";
-  //   document.getElementsByClassName("cardContainerContent")[0].style.transformStyle = "preserve-3d";
-  // } 
   return (
     <div className="cardContainer">
       <div className="cardContainerContent" style={{  backgroundImage: `url('./images/10.jpeg')` }}>
